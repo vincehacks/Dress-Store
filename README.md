@@ -1,4 +1,4 @@
-# Dress-Store Iteration 1
+# Dress-Store
 
  Created by Vince Chang
 
@@ -17,3 +17,6 @@ and clicks on the next button, the shipping form is shown. The user will click
 on the finish button and a summary of what they purchased will appear on the
 screen.
 
+![](https://github.com/vincehacks/Dress-Store/blob/master/screenshots/I1_P1.png)
+![](https://github.com/vincehacks/Dress-Store/blob/master/screenshots/I1_P2.png)
+![](https://github.com/vincehacks/Dress-Store/blob/master/screenshots/I1_P3.png)
