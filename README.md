@@ -2,7 +2,7 @@
 
  Created by Vince Chang
 
- ## Tech Stack:
+ ### Tech Stack:
  - BackboneJS
  - Handlebars
  - HTML5/CSS3
@@ -10,7 +10,7 @@
  - Jquery
  - Bootstrap
 
-## Dress Store Iteration 1
+### Dress Store Iteration 1
 This iteration was my first attempt at creating the Dress-Store. The user only
 has one dress to choose from. After the user selects through the dress options
 and clicks on the next button, the shipping form is shown. The user will click
@@ -25,7 +25,7 @@ screen.
 1. Figuring out how to pull the data from a form and organizing it in a way that
 was easy for me to display the data onto the web page
 
-## Dress Store Iteration 2
+### Dress Store Iteration 2
 This iteration I decided to add another item to my Backbone collection. I also
 split each section in the chain of events to its own corresponding view with
 a MainView that communicates to all other views (ProductView, ShippingView, and
