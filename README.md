@@ -2,7 +2,7 @@
 
  Created by Vince Chang
 
- #### Tech Stack:
+ ## Tech Stack:
  - BackboneJS
  - Handlebars
  - HTML5/CSS3
@@ -10,7 +10,7 @@
  - Jquery
  - Bootstrap
 
-#### Dress Store Iteration 1
+## Dress Store Iteration 1
 This iteration was my first attempt at creating the Dress-Store. The user only
 has one dress to choose from. After the user selects through the dress options
 and clicks on the next button, the shipping form is shown. The user will click
