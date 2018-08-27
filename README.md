@@ -1,4 +1,4 @@
-# Dress-Store
+# Retail-Store
 
  Created by Vince Chang
 
@@ -10,22 +10,22 @@
  - Jquery
  - Bootstrap
 
-### Dress Store Iteration 1.0
-This iteration was my first attempt at creating the Dress-Store. The user only
+### Retail Store Iteration 1.0
+This iteration was my first attempt at creating the Retail-Store. The user only
 has one dress to choose from. After the user selects through the dress options
 and clicks on the next button, the shipping form is shown. The user will click
 on the finish button and a summary of what they purchased will appear on the
 screen.
 
-![](https://github.com/vincehacks/Dress-Store/blob/master/screenshots/I1_P1.png)
-![](https://github.com/vincehacks/Dress-Store/blob/master/screenshots/I1_P2.png)
-![](https://github.com/vincehacks/Dress-Store/blob/master/screenshots/I1_P3.png)
+![](https://github.com/vincehacks/Retail-Store/blob/master/screenshots/I1_P1.png)
+![](https://github.com/vincehacks/Retail-Store/blob/master/screenshots/I1_P2.png)
+![](https://github.com/vincehacks/Retail-Store/blob/master/screenshots/I1_P3.png)
 
 ## Biggest Challenges
 1. Figuring out how to pull the data from a form and organizing it in a way that
 was easy for me to display the data onto the web page
 
-### Dress Store Iteration 2.0
+### Retail Store Iteration 2.0
 This iteration I decided to add another item to my Backbone collection. I also
 split each section in the chain of events to its own corresponding view with
 a MainView that communicates to all other views (ProductView, ShippingView, and
@@ -40,12 +40,12 @@ better user flow
 - The last CheckoutView module no longer shows the picture and description of
 what they ordered, just shows the size, color, quantity and name of item
 
-![](https://github.com/vincehacks/Dress-Store/blob/master/screenshots/I2_P1.png)
-![](https://github.com/vincehacks/Dress-Store/blob/master/screenshots/I2_P2.png)
-![](https://github.com/vincehacks/Dress-Store/blob/master/screenshots/I2_P3.png)
-![](https://github.com/vincehacks/Dress-Store/blob/master/screenshots/I2_P4.png)
-![](https://github.com/vincehacks/Dress-Store/blob/master/screenshots/I2_P5.png)
-![](https://github.com/vincehacks/Dress-Store/blob/master/screenshots/I2_P6.png)
+![](https://github.com/vincehacks/Retail-Store/blob/master/screenshots/I2_P1.png)
+![](https://github.com/vincehacks/Retail-Store/blob/master/screenshots/I2_P2.png)
+![](https://github.com/vincehacks/Retail-Store/blob/master/screenshots/I2_P3.png)
+![](https://github.com/vincehacks/Retail-Store/blob/master/screenshots/I2_P4.png)
+![](https://github.com/vincehacks/Retail-Store/blob/master/screenshots/I2_P5.png)
+![](https://github.com/vincehacks/Retail-Store/blob/master/screenshots/I2_P6.png)
 
 ## Biggest Challenges
 1. It was difficult now with another item in the mix. My biggest hurdle was how
