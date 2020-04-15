@@ -1,22 +1,22 @@
 // Created by Vince Chang
-(function(){
+(function () {
 
   // Backbone collection that holds information for each dress that is rendered
-  const items =[
+  const items = [
     {
       "product-title": "Nightway Lace Halter Gown",
       "product-image": "https://tinyurl.com/y9j7b9so",
       "product-description": "Sure to make the best-dressed list! A delicate " +
-      "lace bodice, alluring keyhole detail and high slit make this Nightway " +
-      " halter gown a show-stopping piece.",
-      "price":"$109"
+        "lace bodice, alluring keyhole detail and high slit make this Nightway " +
+        " halter gown a show-stopping piece.",
+      "price": "$109"
     },
     {
       "product-title": "Ruffle-Sleeve Sheath Dress",
       "product-image": "https://tinyurl.com/yas3aps3",
       "product-description": "Updated with beauty of ruffled sleeves, this " +
-      " timeless Vince Camuto sheath dress works for all occasions.",
-      "price":"$138"
+        " timeless Vince Camuto sheath dress works for all occasions.",
+      "price": "$138"
     }
   ];
 
@@ -27,7 +27,7 @@
   const ProductModel = Backbone.Model.extend({});
 
   // Created a Backbone Collection that holds different models which are items
-  const ProductCollection = Backbone.Collection.extend({model: ProductModel});
+  const ProductCollection = Backbone.Collection.extend({ model: ProductModel });
 
   // Created a new instance of the collection and pass in my items as the model
   const productCollection = new ProductCollection(items);
@@ -44,15 +44,15 @@
   *****************************************************************************/
   const ProductView = Backbone.View.extend({
     el: "#productView",
-    initialize(){
+    initialize() {
       /* Using Backbone channel to retrieve item information
        * saveUserSelection will listen when it should make a call to
        * getCollectionData
        */
-      channel.on('saveUserSelection',this.getCollectionData.bind(this));
+      channel.on('saveUserSelection', this.getCollectionData.bind(this));
       this.render();
     },
-    render(){
+    render() {
       const source = $('#productViewTemplate').html();
       const template = Handlebars.compile(source);
 
@@ -64,8 +64,8 @@
     },
     /* getCollectionData() will retrieve the collection data that was passed in
      * and let sendUserSelectionData() know that the data is ready to be used */
-    getCollectionData(){
-      channel.trigger("sendUserSelectionData",this.collection.toJSON());
+    getCollectionData() {
+      channel.trigger("sendUserSelectionData", this.collection.toJSON());
     }
   });
 
@@ -81,15 +81,15 @@
   *****************************************************************************/
   const ShippingView = Backbone.View.extend({
     el: "#shippingView",
-    initialize(){
+    initialize() {
       this.render();
-      channel.on("sendUserSelectionData",this.showShipping,this);
+      channel.on("sendUserSelectionData", this.showShipping, this);
       channel.trigger("saveUserSelection");
     },
-    events:{
-      "click #finishButton" : "initializeCheckout"
+    events: {
+      "click #finishButton": "initializeCheckout"
     },
-    render(){
+    render() {
       const source = $('#shippingViewTemplate').html();
       const template = Handlebars.compile(source);
       this.$el.html(template);
@@ -112,12 +112,12 @@
       let prodIndex = 0;
 
       // Logic for appending information to stringBuilder
-      userChoices.forEach((e)=> {
+      userChoices.forEach((e) => {
         selectStringBuilder += `${e.name}: ${e.value}<br>`;
-        if(e.name === "Quantity"){
-          if(e.value && parseInt(e.value,10) > 0){
+        if (e.name === "Quantity") {
+          if (e.value && parseInt(e.value, 10) > 0) {
             const productStringBuilder =
-            `Product: ${data[prodIndex]["product-title"]}<br>
+              `Product: ${data[prodIndex]["product-title"]}<br>
             Price: ${data[prodIndex]["price"]}<br>`;
             stringBuilder += productStringBuilder + selectStringBuilder;
           }
@@ -128,7 +128,7 @@
     },
     /* Once the user clicks on the finishButton, this function executes and
      * instantiates a new instance of CheckoutView */
-    initializeCheckout(){
+    initializeCheckout() {
       const checkoutView = new CheckoutView();
     }
   });
@@ -141,7 +141,7 @@
   *****************************************************************************/
   const CheckoutView = Backbone.View.extend({
     el: "#checkoutView",
-    initialize(){
+    initialize() {
       this.showCheckout();
     },
     /* showCheckout() will hide the shippingView then will record shipping
@@ -176,13 +176,13 @@
   * will compile the #mainViewTemplate and call renderProductView()
   * The nextButton will also instantiate a new shippingView upon user click
   *****************************************************************************/
-    const MainView = Backbone.View.extend({
+  const MainView = Backbone.View.extend({
     el: ".big-container",
 
-    events:{
-      "click #nextButton" : "initializeShippingView"
+    events: {
+      "click #nextButton": "initializeShippingView"
     },
-    render(){
+    render() {
       const source = $('#mainContainerTemplate').html();
       const template = Handlebars.compile(source);
       this.$el.html(template);
@@ -190,12 +190,12 @@
     },
     /* renderProductView() will instantiate a new ProductView and show the items
      * a user can purchase from the website */
-    renderProductView(){
-      const productView = new ProductView({collection: productCollection});
+    renderProductView() {
+      const productView = new ProductView({ collection: productCollection });
     },
     /* initializeShippingView() will instantiate a new ShppingView once the user
      * clicks on the nextButton */
-    initializeShippingView(){
+    initializeShippingView() {
       const shippingView = new ShippingView();
     }
   });

@@ -1,15 +1,15 @@
 // Created by Vince Chang
-$(function() {
+$(function () {
   // Collection Data
-  const items =[
+  const items = [
     {
       "page-title": "Women's Dresses",
       "product-image": "https://tinyurl.com/y9j7b9so",
       "product-description": "Sure to make the best-dressed list! A delicate " +
-      "lace bodice, alluring keyhole detail and high slit make this Nightway " +
-      "halter gown a show-stopping piece.",
+        "lace bodice, alluring keyhole detail and high slit make this Nightway " +
+        "halter gown a show-stopping piece.",
       "product-title": "Nightway Lace Halter Gown",
-      "price":"$109"
+      "price": "$109"
     }
   ];
 
@@ -32,9 +32,9 @@ $(function() {
     initialize() {
       this.render();
     },
-    events:{
-      "click #next-transaction" : "showShipping",
-      "click #finish-transaction" : "showCheckout"
+    events: {
+      "click #next-transaction": "showShipping",
+      "click #finish-transaction": "showCheckout"
     },
     // Do this when NEXT button is clicked
     showShipping() {
@@ -60,7 +60,7 @@ $(function() {
         $("#recipt2").append(`${e.name}: ${e.value}<br/>`);
       });
     },
-    render(){
+    render() {
       // Using jquery and handlebars to recognize the template I placed in
       // my index.html file and dumps it into the div
       const source = $('#product-template').html();
@@ -80,7 +80,7 @@ $(function() {
       // Iterate through the collection and call ProductView to display items
       // For each item, append the new view to the "big-container div"
       this.collection.each((item) => {
-        let view = new ProductView({model:item});
+        let view = new ProductView({ model: item });
         this.$el.append(view.render().el);
       });
       return this;
